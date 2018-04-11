@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <title>Bootstrap 4 Layout</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
+        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link rel="stylesheet" href="/css/custom.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $( function() {
+              $( "#datepicker" ).datepicker();
+              $( "#anim" ).on( "change", function() {
+                $( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+              });
+            } );
+        </script>
+    </head>
+
+    <body>
+        <!-- table lustReportingTable  -->
+        <!-- <table id="lustReportingTable"> -->
+            <div class="container-fluid">   
+                <div class="row">
+                    <h1 class="display-5 text-left m-4">LUST Incident Reporting Form</h1>
+                </div>
+                <div class="container">
+                    <p class="text-left">Notice (6/23/17): The OLPRR reporting tool is offline for maintenance. You have reached an alternative webpage to submit incident report information. Reporters will continue to receive an email confirming receipt and providing the incident log number. During this period DEQ responses may take up to 3 business days to complete. Please email hotinfo@deq.state.or.us with questions or problems, or call 503-229-5263 and ask to speak with the Heating Oil Tank or Leaking Underground Storage Tank Duty Officer. We apologize for any inconvenience or delays you may experience.</p>                    
+                    <p class="text-left font-weight-bold pl-1" style="background-color: darkSeaGreen">Incident Information</p>
+                 
+                     <!-- Form code begins -->
+                     <form class="form" role="form" autocomplete="off" method="POST">
+                        <!-- Date Reported -->
+                        <div class="form-group col-md-2 mt-2">                               
+                                <label for="date-Reported">Date Reported</label>
+                                <input  type="text" class="form-control" id="date-Reported" placeholder="4/4/18" disabled />
+                        </div>
+                        <!-- /Date Reported -->
+                        <!-- Date Released Discovered -->
+                        <div class="form-group required mt-2">                                
+                                <label class="control-label col-12" for="dateReleasedDiscovered">Date Released Discovered</label>
+                                <input class="form-control col-md-2 " id="datepicker" type="text" title="Date Released Discovered" required="required"/>
+                        </div>
+                        <!-- /Date Released Discovered -->
+                        <!-- Site Type -->
+                        <div class="form-group required col-md-2 mt-2">
+                            <label class="control-label" for="siteType">Site Type</label>
+                            <select class="form-control" id="siteType" required="required" >
+                                <option value="" selected></option>  
+                                <option value="H">Heating Oil Tank</option>
+                                <option value="R">Regulated UST</option>
+                                <option value="U">Unregulated UST</option>
+                            </select>
+                        </div>
+                        <!-- /Site Type -->
+                        <!-- Site Name, County -->
+                        <div class="form-row mt-4">
+                            <div class="form-group required col-sm-8 pb-3">
+                                <label class="control-label" for="siteName">Site Name</label>
+                                <input type="text" class="form-control" id="siteName" required="required" />
+                            </div>
+                            <div class="form-group required col-sm-4 pb-3">
+                                <label  class="control-label" for="siteCounty">Site County </label>
+                                <div class="input-group">
+                                    <select class="form-control" id="siteCounty" required="required" >
+                                            <option selected="selected" value=""></option>
+                                            <option value="3">CLACKAMAS</option>
+                                            <option value="24">MARION</option>
+                                            <option value="26">MULTNOMAH</option>
+                                            <option value="34">WASHINGTON</option>
+                                            <option value="999">--------------------</option>
+                                            <option value="1">BAKER</option>
+                                            <option value="2">BENTON</option>
+                                            <option value="4">CLATSOP</option>
+                                            <option value="5">COLUMBIA</option>
+                                            <option value="6">COOS</option>
+                                            <option value="7">CROOK</option>
+                                            <option value="8">CURRY</option>
+                                            <option value="9">DESCHUTES</option>
+                                            <option value="10">DOUGLAS</option>
+                                            <option value="11">GILLIAM</option>
+                                            <option value="12">GRANT</option>
+                                            <option value="13">HARNEY</option>
+                                            <option value="14">HOOD RIVER</option>
+                                            <option value="15">JACKSON</option>
+                                            <option value="16">JEFFERSON</option>
+                                            <option value="17">JOSEPHINE</option>
+                                            <option value="18">KLAMATH</option>
+                                            <option value="19">LAKE</option>
+                                            <option value="20">LANE</option>
+                                            <option value="21">LINCOLN</option>
+                                            <option value="22">LINN</option>
+                                            <option value="23">MALHEUR</option>
+                                            <option value="25">MORROW</option>
+                                            <option value="27">POLK</option>
+                                            <option value="28">SHERMAN</option>
+                                            <option value="29">TILLAMOOK</option>
+                                            <option value="30">UMATILLA</option>
+                                            <option value="31">UNION</option>
+                                            <option value="32">WALLOWA</option>
+                                            <option value="33">WASCO</option>
+                                            <option value="35">WHEELER</option>
+                                            <option value="36">YAMHILL</option>
+                                    </select>
+                                </div>
+                            </div>                        
+                        </div>
+                        <!-- /Site Name, County -->
+                        <!-- Street number, quadrant, street name, street type -->
+                        <div class="form-row mt-4">
+                            <div class="form-group required col-md-3 pb-3">
+                                <label class="control-label" for="siteStreetNumber">Site Street Number</label>
+                                <input type="text" class="form-control" id="siteStreetNumber" required="required" />
+                            </div>
+                            <div class="form-group required col-md-3 pb-3">
+                                <label  class="control-label" for="quandrant">Quadrant</label>
+                                <div class="input-group">
+                                    <select class="form-control" id="quandrant" required="required">
+                                            <option selected="selected" value=""></option>
+                                            <option value="N">N</option>
+                                            <option value="S">S</option>
+                                            <option value="E">E</option>
+                                            <option value="W">W</option>
+                                            <option value="NE">NE</option>
+                                            <option value="NW">NW</option>
+                                            <option value="SE">SE</option>
+                                            <option value="SW">SW</option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <div class="form-group required col-md-3 pb-3">
+                                    <label class="control-label" for="siteStreetName">Site Street Name </label>
+                                    <input type="text" class="form-control" id="siteStreetName"  required="required"/>
+                                </div>
+                                <div class="form-group required col-md-3 pb-3">
+                                    <label  class="control-label" for="siteStreetType">Site Street Type</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="siteStreetType" >
+                                                <option selected="selected" value=""></option>
+                                                <option value="Street">Street</option>
+                                                <option value="Avenue">Avenue</option>
+                                                <option value="Road">Road</option>
+                                                <option value="Boulevard">Boulevard</option>
+                                                <option value="Lane">Lane</option>
+                                                <option value="Way">Way</option>
+                                                <option value="Drive">Drive</option>
+                                                <option value="Highway">Highway</option>
+                                                <option value="Court">Court</option>
+                                                <option value="Place">Place</option>
+                                                <option value="Parkway">Parkway</option>
+                                                <option value="Terrace">Terrace</option>
+                                                <option value="Loop">Loop</option>
+                                                <option value="Circle">Circle</option>
+                                        </select>
+                                    </div>
+                                </div>                        
+                        </div>
+                        <!-- /Street number, quadrant, street name, street type  -->
+
+                        <!-- city, zip, phone -->
+                        <div class="form-row mt-4">
+                            <div class="form-group required col-md-4 pb-3">
+                                <label class="control-label" for="siteCity">Site City</label>
+                                <input type="text" class="form-control" id="siteCity" required="required" />
+                            </div>
+                            <div class="form-group required col-md-4 pb-3">
+                                <label class="control-label" for="siteStreetNumber">Site Zip Code</label>
+                                <input type="text" class="form-control" id="siteStreetNumber" required="required" />
+                            </div>
+                            <div class="form-group col-md-4 pb-3">
+                                <label for="sitePhone">Site Phone </label>
+                                <input type="text" class="form-control" id="sitePhone" />
+                            </div>
+                        </div>
+                        <!-- /city, zip, phone  -->
+
+                        <!-- Reported By, Phone, Company -->
+                        <div class="form-row mt-4">
+                            <div class="form-group required col-md-4 pb-3">
+                                <label class="control-label" for="reportedBy">Reported By</label>
+                                <input type="text" class="form-control" id="reportedBy" required="required" />
+                            </div>
+                            <div class="form-group required col-md-4 pb-3">
+                                <label class="control-label" for="reportedByPhone">Reported By Phone</label>
+                                <input type="text" class="form-control" id="reportedByPhone" required="required" />
+                            </div>
+                            <div class="form-group required col-md-4 pb-3">
+                                <label class="control-label" for="company">Company</label>
+                                <input type="text" class="form-control" id="company" required="required" />
+                            </div>
+                        </div>
+                        <!-- /Reported By, Phone, Company  -->
+
+                        <!-- Reported By Email -->
+                        <div class="form-row mt-4">
+                            <div class="form-group required col-md-4 pb-3">
+                                <label class="control-label" for="reportedByEmail">Reported By Email</label>
+                                <input type="text" class="form-control" id="reportedByEmail" required="required" />
+                            </div>
+                            <div class="form-group required col-md-8 pb-3 pt-5">
+                                *This information is required to receive a submission confirmation email.
+                            </div>
+                        </div>
+                        <!-- /Reported By Email  -->
+                        <p class="text-left font-weight-bold pl-1" style="background-color: darkSeaGreen">Responsible Party</p>
+                        
+                            <!-- Responsible Party -->
+                            <div class="form-row mt-4">
+                                <div class="form-group required col-md-6 pb-3">
+                                    <label class="control-label" for="responsiblePartyFirstName">Responsible Party First Name</label>
+                                    <input type="text" class="form-control" id="responsiblePartyFirstName" required="required" />
+                                </div>
+                                <div class="form-group required col-md-6 pb-3">
+                                    <label class="control-label" for="responsiblePartyLastName">Responsible Party Last Name</label>
+                                    <input type="text" class="form-control" id="responsiblePartyLastName" required="required" />
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="form-group required col-md-12 pb-3">
+                                    <label class="control-label" for="organization">Organization</label>
+                                    <input type="text" class="form-control" id="organization" required="required" />
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="form-group required col-md-6 pb-3">
+                                    <label class="control-label" for="responsiblePartyAddress">Address</label>
+                                    <input type="text" class="form-control" id="responsiblePartyAddress" required="required" />
+                                </div>
+                                <div class="form-group required col-md-6 pb-3">
+                                    <label class="control-label" for="responsiblePartyPhone">Phone</label>
+                                    <input type="text" class="form-control" id="responsiblePartyPhone" required="required" />
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="form-group required col-md-6 pb-3">
+                                    <label class="control-label" for="responsiblePartyCity">City</label>
+                                    <input type="text" class="form-control" id="responsiblePartyCity" required="required" />
+                                </div>
+                                <div class="form-group col-md-6 pb-3">
+                                    <label for="responsiblePartyEmail">Email</label>
+                                    <input type="text" class="form-control" id="responsiblePartyEmail"  />
+                                </div>
+                            </div>
+                            <div class="form-row mt-4">
+                                <div class="form-group required col-md-12 pb-3">
+                                    <label  class="control-label" for="responsiblePartyState">State</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="responsiblePartyState" >
+                                                <option selected="selected" value=""></option>
+                                                <option value="OR">Oregon</option>
+                                                <option value="WA">Washington</option>
+                                                <option value="CA">California</option>
+                                                <option value="ID">Idaho</option>
+                                                <option value="ZZ">--------------------</option>
+                                                <option value="AL">Alabama</option>
+                                                <option value="AK">Alaska</option>
+                                                <option value="AZ">Arizona</option>
+                                                <option value="AR">Arkansas</option>
+                                                <option value="CO">Colorado</option>
+                                                <option value="CT">Connecticut</option>
+                                                <option value="DE">Delaware</option>
+                                                <option value="DC">Dist. of Columbia</option>
+                                                <option value="FL">Florida</option>
+                                                <option value="GA">Georgia</option>
+                                                <option value="HI">Hawaii</option>
+                                                <option value="IL">Illinois</option>
+                                                <option value="IN">Indiana</option>
+                                                <option value="IA">Iowa</option>
+                                                <option value="KS">Kansas</option>
+                                                <option value="KY">Kentucky</option>
+                                                <option value="LA">Louisiana</option>
+                                                <option value="ME">Maine</option>
+                                                <option value="MD">Maryland</option>
+                                                <option value="MA">Massachusetts</option>
+                                                <option value="MI">Michigan</option>
+                                                <option value="MN">Minnesota</option>
+                                                <option value="MS">Mississippi</option>
+                                                <option value="MO">Missouri</option>
+                                                <option value="MT">Montana</option>
+                                                <option value="NE">Nebraska</option>
+                                                <option value="NV">Nevada</option>
+                                                <option value="NH">New Hampshire</option>
+                                                <option value="NJ">New Jersey</option>
+                                                <option value="NM">New Mexico</option>
+                                                <option value="NY">New York</option>
+                                                <option value="NC">North Carolina</option>
+                                                <option value="ND">North Dakota</option>
+                                                <option value="OH">Ohio</option>
+                                                <option value="OK">Oklahoma</option>
+                                                <option value="PA">Pennsylvania</option>
+                                                <option value="RI">Rhode Island</option>
+                                                <option value="SC">South Carolina</option>
+                                                <option value="SD">South Dakota</option>
+                                                <option value="TN">Tennessee</option>
+                                                <option value="TX">Texas</option>
+                                                <option value="UT">Utah</option>
+                                                <option value="VT">Vermont</option>
+                                                <option value="VA">Virginia</option>
+                                                <option value="WV">West Virginia</option>
+                                                <option value="WI">Wisconsin</option>
+                                                <option value="WY">Wyoming</option>
+                                                <option value="AB">Alberta</option>
+                                                <option value="BC">British Columbia</option>
+                                                <option value="CZ">Canal Zone</option>
+                                                <option value="GU">Guam</option>
+                                                <option value="LB">Labrador</option>
+                                                <option value="MB">Manitoba</option>
+                                                <option value="NF">Newfoundland</option>
+                                                <option value="NS">Nova Scotia</option>
+                                                <option value="NT">NW Territories</option>
+                                                <option value="ON">Ontario</option>
+                                                <option value="PE">Prince Edward Isle</option>
+                                                <option value="PQ">Province of Quebec</option>
+                                                <option value="PR">Puerto Rico</option>
+                                                <option value="SK">Saskatchewan</option>
+                                                <option value="VI">Virgin Islands</option>
+                                                <option value="YT">Yukon Territory</option>
+                                        </select>
+                                    </div>
+                                </div> 
+                                <div class="form-row mt-4">
+                                    <div class="form-group required col-xs-12 pb-3">
+                                        <label class="control-label" for="responsiblePartyZipCode">Zip Code</label>
+                                        <input type="text" class="form-control" id="responsiblePartyZipCode" required="required" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Responsible Party  -->
+    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <p class="text-left font-weight-bold pl-1" style="background-color: darkSeaGreen">Site Assessment</p>
+                        <!-- site assessment -->
+                        <div class="form-row mt-4">
+                            <div class="form-group required col-md-3 pb-3">
+                                <label  class="control-label" for="confirmationCode">Confirmation</label>
+                                <div class="input-group">
+                                    <select class="form-control" id="confirmationCode" >
+                                            <option selected="selected" value=""></option>
+                                            <option value="CN">Contractor</option>
+                                            <option value="RR">RP Report</option>
+                                            <option value="SI">Staff: DEQ</option>
+                                            <option value="LD">Lab: DEQ</option>
+                                            <option value="LR">Lab: RP</option>
+                                            <option value="LO">Lab: Other</option>
+                                            <option value="OT">Other</option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <div class="form-group required col-md-3 pb-3">
+                                <label  class="control-label" for="discoveryCode">Discovery</label>
+                                <div class="input-group">
+                                    <select class="form-control" id="discoveryCode" >
+                                            <option selected="selected" value=""></option>
+                                            <option value="DC">Decommissioning</option>
+                                            <option value="RM">Routine Monitoring</option>
+                                            <option value="CP">Complaint</option>
+                                            <option value="IC">Leak Detection</option>
+                                            <option value="SA">Site Assessment</option>
+                                            <option value="TT">Tightness Test</option>
+                                            <option value="OT">Other</option>
+                                    </select>
+                                </div>
+                            </div>   
+                            <div class="form-group required col-md-3 pb-3">
+                                <label  class="control-label" for="releaseCauseCode">Cause</label>
+                                <div class="input-group">
+                                    <select class="form-control" id="releaseCauseCode" >
+                                            <option selected="selected" value=""></option>
+                                            <option value="OF">Overfill</option>
+                                            <option value="SS">Spill</option>
+                                            <option value="CR">Corrosion</option>
+                                            <option value="IP">Install Problem</option>
+                                            <option value="PM">Physical/Mechanicl Damage</option>
+                                            <option value="OT">Other</option>
+                                            <option value="UN">Unknown</option>
+                                    </select>
+                                </div>
+                            </div>    
+                            <div class="form-group required col-md-3 pb-3">
+                                <label  class="control-label" for="sourceCode">Source</label>
+                                <div class="input-group">
+                                    <select class="form-control" id="sourceCode" >
+                                            <option selected="selected" value=""></option>
+                                            <option value="1">Tank</option>
+                                            <option value="2">Piping</option>
+                                            <option value="3">Dispenser</option>
+                                            <option value="4">Turbine Pump</option>
+                                            <option value="5">Delivery Problem</option>
+                                            <option value="6">Other</option>
+                                    </select>
+                                </div>
+                            </div>                      
+                        </div>
+                        <!-- /site assessment  -->
+
+                        <p class="text-left font-weight-bold pl-1" style="background-color: darkSeaGreen">Contaminants</p>
+                        <div class="form-group required row">
+                                <label class="control-label col-lg-12">(select one or more)</label>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox"> Heating Oil   
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">Unleaded Gasoline
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">Leaded Gasoline
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">Misc. Gasoline
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox">Diesel (Motor Fuel)
+                                            </label>
+                                        </div>
+                                    </div>
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">Waste Oil
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                        <p class="text-left font-weight-bold pl-1" style="background-color: darkSeaGreen">Impacted Media</p>
+                        <div class="form-group required row">
+                            <label class="control-label col-lg-12">(select one or more)</label>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Groundwater
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Surface Water
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Drinking Water
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> Soil
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox">Vapor
+                                        </label>
+                                    </div>
+                                </div>
+                            <div class="col-sm-4">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox">Free Product
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <p class="text-left font-weight-bold pl-1" style="background-color: darkSeaGreen">Site Comments</p>
+                        <!-- Site Comments -->
+                        <div class="form-row mt-4">
+                            <div class="form-group col-sm-12 pb-3">
+                                <label for="siteComments">Please enter a comment for the LUST incident (limit 704 characters)</label>
+                                <textarea type="textarea" class="form-control" id="siteComments"  maxlength="704" rows=5></textarea>
+                            </div>    
+                        </div>
+                        <!-- /Site Comments  -->
+
+                        <div class="form-group row">
+
+                            <div class="col-sm-3">
+                                <button type="submit" class="btn btn-success btn-md btn-block">Submit</button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="reset" class="btn btn-default btn-md btn-block">Clear All Fields</button>
+                            </div>
+                        </div>
+                    </form>
+                     <!-- Form code ends --> 
+                 
+   
+                </div>
+            </div>
+
+        <!-- </table> -->
+        <!-- /table lustReportingTable  -->
+        <!-- <script src="/js/jquery.min.js"></script> -->
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </body>
+</html>
